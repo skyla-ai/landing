@@ -257,21 +257,21 @@ const Index = () => {
               title="Connect your email account"
               description="Secure OAuth integration with Gmail, Outlook, or your preferred email provider. No forwarding rules needed."
               isReversed={false}
-              imageSrc="/lovable-uploads/bfbac1b5-982d-402e-8895-d717dd1904fe.png"
+              imageSrc="/bfbac1b5-982d-402e-8895-d717dd1904fe.png"
             />
             <HowItWorksStep
               step="2"
               title="Skyla gets work done—you just press 'go'"
               description="Review urgent tasks in your command centre and let Skyla process everything with one click."
               isReversed={true}
-              imageSrc="/lovable-uploads/31015f34-083f-48d4-8355-9db7bc5b9a20.png"
+              imageSrc="/31015f34-083f-48d4-8355-9db7bc5b9a20.png"
             />
             <HowItWorksStep
               step="3"
               title="Skyla drafts automatically—you stay in control"
               description="Every email is drafted for you. Review, edit if needed, and send with confidence."
               isReversed={false}
-              imageSrc="/lovable-uploads/be087d4a-7c98-4d52-bc4c-85823435344f.png"
+              imageSrc="/be087d4a-7c98-4d52-bc4c-85823435344f.png"
             />
           </div>
         </div>
