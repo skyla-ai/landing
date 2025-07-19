@@ -5,9 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Set base path for GitHub Pages deployment
-  // Repository: https://github.com/skyla-ai/landing
-  base: process.env.NODE_ENV === 'production' ? '/landing/' : '/',
+  // Set base path for custom domain deployment
+  // Custom domain: myskyla.ai
+  base: '/',
   server: {
     host: "::",
     port: 8080,
