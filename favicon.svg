@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="houseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="url(#houseGradient)" stroke="#1e40af" stroke-width="2"/>
+  
+  <!-- House structure -->
+  <path d="M8 20 L16 10 L24 20 L24 26 L8 26 Z" fill="#ffffff" stroke="#1e40af" stroke-width="1"/>
+  
+  <!-- House roof -->
+  <path d="M6 20 L16 8 L26 20" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Door -->
+  <rect x="13" y="21" width="6" height="5" fill="url(#aiGradient)" stroke="#0891b2" stroke-width="0.5"/>
+  
+  <!-- Windows -->
+  <rect x="10" y="18" width="3" height="3" fill="url(#aiGradient)" stroke="#0891b2" stroke-width="0.5"/>
+  <rect x="19" y="18" width="3" height="3" fill="url(#aiGradient)" stroke="#0891b2" stroke-width="0.5"/>
+  
+  <!-- AI circuit patterns -->
+  <circle cx="11.5" cy="19.5" r="0.5" fill="#ffffff"/>
+  <circle cx="20.5" cy="19.5" r="0.5" fill="#ffffff"/>
+  <path d="M11.5 19.5 L13 19.5 M19 19.5 L20.5 19.5" stroke="#ffffff" stroke-width="0.5"/>
+  
+  <!-- Door handle/AI element -->
+  <circle cx="17.5" cy="23.5" r="0.5" fill="#ffffff"/>
+  
+  <!-- Small AI nodes around the house -->
+  <circle cx="12" cy="16" r="0.8" fill="#06b6d4" opacity="0.8"/>
+  <circle cx="20" cy="16" r="0.8" fill="#06b6d4" opacity="0.8"/>
+  <circle cx="16" cy="14" r="0.8" fill="#06b6d4" opacity="0.8"/>
+  
+  <!-- Connection lines between AI nodes -->
+  <path d="M12 16 L16 14 M16 14 L20 16 M12 16 L20 16" stroke="#06b6d4" stroke-width="0.8" opacity="0.6"/>
+</svg> 
