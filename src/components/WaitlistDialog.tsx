@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { supabase, type WaitlistEntry } from "@/lib/supabase";
 
 interface WaitlistDialogProps {
   children: React.ReactNode;
@@ -83,24 +82,32 @@ export const WaitlistDialog = ({ children }: WaitlistDialogProps) => {
     setIsSubmitting(true);
     setSubmitError(null);
 
+    const payload = {
+      ...formData,
+      access_key: "e121b1df-59ba-4f69-a97b-af856d34f8c5",
+      subject: "New Skyla Landing Page Waitlist Submission",
+      from_name: "Skyla Waitlist",
+      replyto: formData.email,
+    };
+
     try {
-      const waitlistData: Omit<WaitlistEntry, 'id' | 'created_at'> = {
-        full_name: formData.fullName.trim(),
-        email: formData.email.trim(),
-        team_size: formData.teamSize,
-        challenges: formData.challenges.trim(),
-        beta_testing: formData.betaTesting,
-      };
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-      const { error } = await supabase
-        .from('waitlist')
-        .insert([waitlistData]);
+      const result = await response.json();
 
-      if (error) {
-        throw error;
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        console.error('Error submitting waitlist:', result);
+        setSubmitError(result.message || 'Failed to submit. Please try again.');
       }
-
-      setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting waitlist:', error);
       setSubmitError('Failed to submit. Please try again.');
