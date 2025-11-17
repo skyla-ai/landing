@@ -301,24 +301,26 @@ export const WaitlistDialog = ({ children }: WaitlistDialogProps) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-3xl w-full max-h-[90vh] p-0">
+      <DialogContent className="max-w-3xl w-full max-h-[90vh] p-0 flex flex-col">
         <DialogTitle className="sr-only">Join Waitlist - Secure Your Spot</DialogTitle>
         <DialogDescription className="sr-only">Join the Skyla waitlist to get early access</DialogDescription>
         
-        <div className="p-8">
-          <div className="text-center mb-8">
+        <div className="p-8 pb-4">
+          <div className="text-center">
             <h1 className="text-2xl font-bold text-foreground mb-2">Secure Your Spot</h1>
             <p className="text-muted-foreground">
               Help us build the perfect solution for you. This takes just 2 minutes and helps us prioritize features that matter most.
             </p>
           </div>
+        </div>
 
-          {!isSubmitted && renderProgressDots()}
-          
-          <div className="mb-8">
-            {renderCurrentStep()}
-          </div>
+        {!isSubmitted && renderProgressDots()}
+        
+        <div className="px-8 py-4 flex-grow overflow-y-auto">
+          {renderCurrentStep()}
+        </div>
 
+        <div className="p-8 pt-4 mt-auto border-t">
           {!isSubmitted ? (
             <div className="flex justify-between items-center">
               <div className="flex items-center">
